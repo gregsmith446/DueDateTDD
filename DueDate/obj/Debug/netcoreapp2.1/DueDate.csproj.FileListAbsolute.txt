@@ -1,0 +1,8 @@
+C:\Users\gregs\Desktop\CD\DueDate\DueDate\bin\Debug\netcoreapp2.1\DueDate.deps.json
+C:\Users\gregs\Desktop\CD\DueDate\DueDate\bin\Debug\netcoreapp2.1\DueDate.runtimeconfig.json
+C:\Users\gregs\Desktop\CD\DueDate\DueDate\bin\Debug\netcoreapp2.1\DueDate.runtimeconfig.dev.json
+C:\Users\gregs\Desktop\CD\DueDate\DueDate\bin\Debug\netcoreapp2.1\DueDate.dll
+C:\Users\gregs\Desktop\CD\DueDate\DueDate\obj\Debug\netcoreapp2.1\DueDate.csprojAssemblyReference.cache
+C:\Users\gregs\Desktop\CD\DueDate\DueDate\obj\Debug\netcoreapp2.1\DueDate.csproj.CoreCompileInputs.cache
+C:\Users\gregs\Desktop\CD\DueDate\DueDate\obj\Debug\netcoreapp2.1\DueDate.AssemblyInfoInputs.cache
+C:\Users\gregs\Desktop\CD\DueDate\DueDate\obj\Debug\netcoreapp2.1\DueDate.AssemblyInfo.cs
