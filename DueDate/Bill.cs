@@ -7,25 +7,33 @@ namespace PaymentDateCheck
         public Bill(IHolidayService mockService)
         { }
 
-        //bring in holiday service to check for holidays
-        //use dependency injection
+        private IHolidayService _holidayService = new HolidayService();
+
         public DateTime CheckDate (DateTime dueDate)
         {
             DateTime fakeDate = new DateTime(2019, 12, 20);
-            // if the duedate falls on a business day, m-f, return the due date AS IS
-            if (dueDate.DayOfWeek != DayOfWeek.Saturday || dueDate.DayOfWeek != DayOfWeek.Sunday)
+
+            if (dueDate.DayOfWeek == DayOfWeek.Saturday)
             {
-                return dueDate;
-            }
-            else if (dueDate.DayOfWeek == DayOfWeek.Saturday)
-            {
+                // return fakeDate;
                 return dueDate.AddDays(2);
             }
-            else
+            if (dueDate.DayOfWeek == DayOfWeek.Sunday)
             {
-                return fakeDate;
+                // return fakeDate;
+                return dueDate.AddDays(1);
             }
-                
+            if (_holidayService.isHoliday(dueDate) == true && dueDate.DayOfWeek == DayOfWeek.Friday) 
+            {
+                return dueDate.AddDays(3);
+            }
+            else if (_holidayService.isHoliday(dueDate) == true)
+            {
+                return dueDate.AddDays(1);
+            }
+
+            // the duedate falls on a business day, m-f, return the due date AS ISurn dueDate;
+                return dueDate;
         }
     }
 

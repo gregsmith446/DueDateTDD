@@ -7,10 +7,14 @@ namespace PaymentDateCheck
     {
         public bool isHoliday (DateTime dueDate)
         {
-            var holidays = new List<DateTime>();
-            holidays.Add(new DateTime(2018,12,25));
-            holidays.Add(new DateTime(2018,8,3));
-            if(holidays.Contains(dueDate))
+
+            var holidays = new List<DateTime>
+            {
+                new DateTime(2019, 12, 25),
+                new DateTime(2019, 9, 27),
+            };
+
+            if (holidays.Contains(dueDate))
                 return true;
 
             return false;

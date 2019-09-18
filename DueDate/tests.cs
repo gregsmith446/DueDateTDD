@@ -5,6 +5,59 @@ using System;
 [TestFixture]
 public class TestCode
 {
+    // test 1 the way I think it should be
+    [Test]
+    public void IfDueDateIsASaturday_ReturnDateMonday()
+    {
+        // initialize the interface + the Bill calculator object
+        IHolidayService mockHolidayService = new HolidayService();
+        Bill _bill = new Bill(mockHolidayService);
+
+        DateTime input = new DateTime(2019, 9, 21);
+        var expected = input.AddDays(2);
+        var output = _bill.CheckDate(input);
+        Assert.AreEqual(expected, output);
+    }
+
+    // test 2 the way I think it should be
+    [Test]
+    public void IfDueDateIsASunday_ReturnMonday()
+    {
+        IHolidayService mockHolidayService = new HolidayService();
+        Bill _bill = new Bill(mockHolidayService);
+
+        DateTime input = new DateTime(2019, 9, 22);
+        var expected = input.AddDays(1);
+        var output = _bill.CheckDate(input);
+        Assert.AreEqual(expected, output);
+    }
+
+    // test 3 the way I think it should be
+    [Test]
+    public void IfDueDateIsAFridayHoliday_ReturnMondayAfterWeekend()
+    {
+        IHolidayService mockHolidayService = new HolidayService();
+        Bill _bill = new Bill(mockHolidayService);
+
+        DateTime input = new DateTime(2019, 9, 27);
+        var expected = input.AddDays(3);
+        var output = _bill.CheckDate(input);
+        Assert.AreEqual(expected, output);
+    }
+
+    // test 4 the way I think it should be
+    [Test]
+    public void IfDueDateIsAWeekdayHolidayNotFriday_ReturnNextDay()
+    {
+        IHolidayService mockHolidayService = new HolidayService();
+        Bill _bill = new Bill(mockHolidayService);
+
+        DateTime input = new DateTime(2019, 12, 25);
+        var expected = input.AddDays(1);
+        var output = _bill.CheckDate(input);
+        Assert.AreEqual(expected, output);
+    }
+
     // test 1
     [Test]
     public void IfSaturday_ReturnMonday()
