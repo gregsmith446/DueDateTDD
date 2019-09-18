@@ -11,9 +11,10 @@ namespace Tests
         [Test]
         public void ifBussinessDay_ReturnDueDate()
         {
-            var input = new DateTime(2018,8,6);
-            var mockHolidayService = new HolidayService<IHolidayService>();
-            var _bill = new Bill(mockHolidayService);
+            DateTime input = new DateTime(2019, 9, 17);
+            IHolidayService mockHolidayService = new HolidayService<IHolidayService>();
+            Bill _bill = new Bill(mockHolidayService);
+
             var output = _bill.CheckDate(input);
             var expected = input;
             Assert.AreEqual(expected, output);
